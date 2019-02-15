@@ -1,0 +1,65 @@
+p#notice
+  = notice
+p
+  strong
+    | Asset category:
+  = @software.asset_category
+p
+  strong
+    | Asset code:
+  = @software.asset_code
+p
+  strong
+    | Category:
+  = @software.category
+p
+  strong
+    | Manufacturer:
+  = @software.manufacturer
+p
+  strong
+    | Product name:
+  = @software.product_name
+p
+  strong
+    | Serial code:
+  = @software.serial_code
+p
+  strong
+    | Localtion:
+  = @software.localtion
+p
+  strong
+    | Administrator:
+  = @software.administrator
+p
+  strong
+    | User:
+  = @software.user
+p
+  strong
+    | Expiration date:
+  = @software.expiration_date
+p
+  strong
+    | Acquisition date:
+  = @software.acquisition_date
+p
+  strong
+    | Acquisition price:
+  = @software.acquisition_price
+p
+  strong
+    | Amortization period:
+  = @software.amortization_period
+p
+  strong
+    | Amortize state:
+  = @software.amortize_state
+p
+  strong
+    | Remarks:
+  = @software.remarks
+= link_to 'Edit', edit_software_path(@software)
+|  | 
+= link_to 'Back', softwares_path

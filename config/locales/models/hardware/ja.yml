@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      hardware: ハードウェア
+    attributes:
+      hardware:
+        asset_category: 資産区分
+        asset_code: 資産コード
+        category: カテゴリ
+        manufacturer: メーカー
+        model: モデル
+        serial_code: serial
+        localtion: 常置場所
+        administrator: 管理者
+        user: 利用者
+        acquisition_date: 取得日
+        acquisition_price: 取得金額
+        amortization_period: 償却期間
+        amortize_state: 償却状態
+        remarks: 備考
+
+  enums:
+    hardware:
+      amortize_state:
+        broken: 故障
+        unused: 未使用
+        using: 利用中
+        amortizing: 償却中
+        
+      asset_category:
+        unknown: 不明
+        equipment: 備品
+        small_asset: 少額資産
+        fixed_asset: 固定資産

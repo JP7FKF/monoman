@@ -1,0 +1,171 @@
+.row
+  p#notice
+    = notice
+.row
+  h1.col-md-8
+    = link_to 'Hardwares', hardwares_path
+  .col-md-4.align-bottom.text-right
+    = link_to 'New Hardware', new_hardware_path, class:'btn btn-primary'
+.row
+  table.table.table-striped
+    thead.thead-dark
+      tr
+        th
+          | Label
+        th
+          | 資産区分
+        th
+          | 資産コード
+        th
+          | カテゴリ
+        th
+          | メーカー
+        th
+          | 製品名
+        th
+          | Serial code
+        th
+          | 常置場所
+        th
+          | 管理者
+        th
+          | 利用者
+        th
+          | 取得日
+        th
+          | 取得金額
+        th
+          | 償却期間
+        th
+          | 償却状態
+        th
+          | 備考
+        th[colspan="3"]
+    tbody
+      - @hardwares.each do |hardware|
+        tr
+          td
+            = link_to 'H-'+"%03d" % hardware.id.to_s, hardware
+          td
+            = hardware.asset_category_i18n
+          td
+            = hardware.asset_code
+          td
+            = hardware.category
+          td
+            = hardware.manufacturer
+          td
+            = hardware.model
+          td
+            = hardware.serial_code
+          td
+            = hardware.localtion
+          td
+            = hardware.administrator
+          td
+            = hardware.user
+          td
+            = hardware.acquisition_date
+          td
+            = hardware.acquisition_price
+          td
+            = hardware.amortization_period
+          td
+            = hardware.amortize_state
+          td
+            = hardware.remarks
+          td
+            = link_to 'Show', hardware
+          td
+            = link_to 'Edit', edit_hardware_path(hardware)
+          td
+            = link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' }
+  br
+
+.row
+  p#notice
+    = notice
+.row
+  h1.col-md-8
+    = link_to 'Sortwares', softwares_path
+  .col-md-4.align-bottom.text-right
+    = link_to 'New Software', new_software_path, class:'btn btn-primary'
+.row
+  table.table.table-striped
+    thead.thead-dark
+      tr
+        th
+          | Label
+        th
+          | 資産区分
+        th
+          | 資産コード
+        th
+          | カテゴリ
+        th
+          | メーカー
+        th
+          | 製品名
+        th
+          | Serial code
+        th
+          | 場所
+        th
+          | 管理者
+        th
+          | 利用者
+        th
+          | 有効期限
+        th
+          | 取得日
+        th
+          | 取得金額
+        th
+          | 償却期間
+        th
+          | 償却状態
+        th
+          | 備考
+        th[colspan="3"]
+    tbody
+      - @softwares.each do |software|
+        tr
+          td
+            = link_to 'S-'+"%03d" % software.id.to_s, software
+          td
+            = software.asset_category
+          td
+            = software.asset_code
+          td
+            = software.category
+          td
+            = software.manufacturer
+          td
+            = software.product_name
+          td
+            = software.serial_code
+          td
+            = software.localtion
+          td
+            = software.administrator
+          td
+            = software.user
+          td
+            = software.expiration_date
+          td
+            = software.acquisition_date
+          td
+            = software.acquisition_price
+          td
+            = software.amortization_period
+          td
+            = software.amortize_state
+          td
+            = software.remarks
+          td
+            = link_to 'Show', software
+          td
+            = link_to 'Edit', edit_software_path(software)
+          td
+            = link_to 'Destroy', software, method: :delete, data: { confirm: 'Are you sure?' }
+  br

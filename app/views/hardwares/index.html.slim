@@ -1,0 +1,75 @@
+p#notice
+  = notice
+h1
+  | Hardwares
+table
+  thead
+    tr
+      th
+        | Asset category
+      th
+        | Asset code
+      th
+        | Category
+      th
+        | Manufacturer
+      th
+        | Model
+      th
+        | Serial code
+      th
+        | Localtion
+      th
+        | Administrator
+      th
+        | User
+      th
+        | Acquisition date
+      th
+        | Acquisition price
+      th
+        | Amortization period
+      th
+        | Amortize state
+      th
+        | Remarks
+      th[colspan="3"]
+  tbody
+    - @hardwares.each do |hardware|
+      tr
+        td
+          = hardware.asset_category
+        td
+          = hardware.asset_code
+        td
+          = hardware.category
+        td
+          = hardware.manufacturer
+        td
+          = hardware.model
+        td
+          = hardware.serial_code
+        td
+          = hardware.localtion
+        td
+          = hardware.administrator
+        td
+          = hardware.user
+        td
+          = hardware.acquisition_date
+        td
+          = hardware.acquisition_price
+        td
+          = hardware.amortization_period
+        td
+          = hardware.amortize_state
+        td
+          = hardware.remarks
+        td
+          = link_to 'Show', hardware
+        td
+          = link_to 'Edit', edit_hardware_path(hardware)
+        td
+          = link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Hardware', new_hardware_path
