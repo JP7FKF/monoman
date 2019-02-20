@@ -11,7 +11,7 @@
   .form-row
     .field.col-md-4.form-group
       = form.label :asset_category
-      = form.number_field :asset_category, class:'form-control'
+      = form.select :asset_category, options_for_select(Software.asset_categories_i18n.keys.map {|k| [Software.asset_categories_i18n[k], k]}), class:'form-control'
     .field.col-md-4.form-group
       = form.label :asset_code
       = form.text_field :asset_code, class:'form-control'
@@ -54,7 +54,7 @@
       = form.number_field :amortization_period, class:'form-control'
     .field.col-md-4.form-group
       = form.label :amortize_state
-      = form.number_field :amortize_state, class:'form-control'
+      = form.select :amortize_state, options_for_select(Software.amortize_states_i18n.keys.map {|k| [Software.amortize_states_i18n[k], k]}), class:'form-control'
     .field.col-md-4.form-group
       = form.label :remarks
       = form.text_area :remarks, class:'form-control'

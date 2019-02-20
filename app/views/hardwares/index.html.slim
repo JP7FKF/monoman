@@ -1,75 +1,83 @@
-p#notice
-  = notice
-h1
-  | Hardwares
-table
-  thead
-    tr
-      th
-        | Asset category
-      th
-        | Asset code
-      th
-        | Category
-      th
-        | Manufacturer
-      th
-        | Model
-      th
-        | Serial code
-      th
-        | Localtion
-      th
-        | Administrator
-      th
-        | User
-      th
-        | Acquisition date
-      th
-        | Acquisition price
-      th
-        | Amortization period
-      th
-        | Amortize state
-      th
-        | Remarks
-      th[colspan="3"]
-  tbody
-    - @hardwares.each do |hardware|
+.row
+  p#notice
+    = notice
+.row
+  h1.col-md-8
+    = link_to 'Hardwares', hardwares_path
+  .col-md-4.align-bottom.text-right
+    = link_to 'New Hardware', new_hardware_path, class:'btn btn-primary'
+.row
+  table.table.table-striped
+    thead.thead-dark
       tr
-        td
-          = hardware.asset_category
-        td
-          = hardware.asset_code
-        td
-          = hardware.category
-        td
-          = hardware.manufacturer
-        td
-          = hardware.model
-        td
-          = hardware.serial_code
-        td
-          = hardware.localtion
-        td
-          = hardware.administrator
-        td
-          = hardware.user
-        td
-          = hardware.acquisition_date
-        td
-          = hardware.acquisition_price
-        td
-          = hardware.amortization_period
-        td
-          = hardware.amortize_state
-        td
-          = hardware.remarks
-        td
-          = link_to 'Show', hardware
-        td
-          = link_to 'Edit', edit_hardware_path(hardware)
-        td
-          = link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' }
-br
-= link_to 'New Hardware', new_hardware_path
+        th
+          | ID
+        th
+          = t('activerecord.attributes.hardware.asset_category')
+        th
+          = t('activerecord.attributes.hardware.asset_code')
+        th
+          = t('activerecord.attributes.hardware.category')
+        th
+          = t('activerecord.attributes.hardware.manufacturer')
+        th
+          = t('activerecord.attributes.hardware.model')
+        th
+          = t('activerecord.attributes.hardware.serial_code')
+        th
+          = t('activerecord.attributes.hardware.localtion')
+        th
+          = t('activerecord.attributes.hardware.administrator')
+        th
+          = t('activerecord.attributes.hardware.user')
+        th
+          = t('activerecord.attributes.hardware.acquisition_date')
+        th
+          = t('activerecord.attributes.hardware.acquisition_price')
+        th
+          = t('activerecord.attributes.hardware.amortization_period')
+        th
+          = t('activerecord.attributes.hardware.amortize_state')
+        th
+          = t('activerecord.attributes.hardware.remarks')
+        th[colspan="3"]
+    tbody
+      - @hardwares.each do |hardware|
+        tr
+          td
+            = link_to 'H-'+"%03d" % hardware.id.to_s, hardware
+          td
+            = hardware.asset_category_i18n
+          td
+            = hardware.asset_code
+          td
+            = hardware.category
+          td
+            = hardware.manufacturer
+          td
+            = hardware.model
+          td
+            = hardware.serial_code
+          td
+            = hardware.localtion
+          td
+            = hardware.administrator
+          td
+            = hardware.user
+          td
+            = hardware.acquisition_date
+          td
+            = hardware.acquisition_price
+          td
+            = hardware.amortization_period
+          td
+            = hardware.amortize_state_i18n
+          td
+            = hardware.remarks
+          td
+            = link_to 'Show', hardware
+          td
+            = link_to 'Edit', edit_hardware_path(hardware)
+          td
+            = link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' }
+  br
