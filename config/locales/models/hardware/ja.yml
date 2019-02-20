@@ -9,7 +9,7 @@ ja:
         category: カテゴリ
         manufacturer: メーカー
         model: モデル
-        serial_code: serial
+        serial_code: Serial
         localtion: 常置場所
         administrator: 管理者
         user: 利用者
