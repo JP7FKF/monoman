@@ -1,0 +1,54 @@
+p#notice = notice
+
+p
+  strong Asset category:
+  = @item.asset_category
+p
+  strong Asset code:
+  = @item.asset_code
+p
+  strong Category:
+  = @item.category
+p
+  strong Subcategory:
+  = @item.subcategory
+p
+  strong Manufacturer:
+  = @item.manufacturer
+p
+  strong Product name:
+  = @item.product_name
+p
+  strong Serial code:
+  = @item.serial_code
+p
+  strong Localtion:
+  = @item.localtion
+p
+  strong Administrator:
+  = @item.administrator
+p
+  strong User:
+  = @item.user
+p
+  strong Expiration date:
+  = @item.expiration_date
+p
+  strong Acquisition date:
+  = @item.acquisition_date
+p
+  strong Acquisition price:
+  = @item.acquisition_price
+p
+  strong Amortization period:
+  = @item.amortization_period
+p
+  strong Amortize state:
+  = @item.state
+p
+  strong Remarks:
+  = @item.remarks
+
+=> link_to 'Edit', edit_item_path(@item)
+'|
+=< link_to 'Back', items_path

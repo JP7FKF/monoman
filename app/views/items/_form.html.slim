@@ -1,0 +1,64 @@
+= form_for @item do |f|
+  - if @item.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@item.errors.count, "error")} prohibited this message from being saved:"
+      ul
+        - @item.errors.full_messages.each do |message|
+          li = message
+  .form-row
+    .field.col-md-4.form-group
+      = f.label :asset_category
+      = f.select :asset_category, options_for_select(Item.asset_categories_i18n.keys.map {|k| [Item.asset_categories_i18n[k], k]}), {}, {class:'form-control'}
+    .field.col-md-4.form-group
+      = f.label :asset_code
+      = f.text_field :asset_code, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :category
+      = f.select :category, options_for_select(Item.categories_i18n.keys.map {|k| [Item.categories_i18n[k], k]}), {},{class:'form-control'}
+    .field.col-md-4.form-group
+      = f.label :subcategory
+      = f.text_field :subcategory, class:'form-control'
+  .form-row
+    .field.col-md-4.form-group
+      = f.label :manufacturer
+      = f.text_field :manufacturer, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :product_name
+      = f.text_field :product_name, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :serial_code
+      = f.text_field :serial_code, class:'form-control'
+  .form-row
+    .field.col-md-4.form-group
+      = f.label :localtion
+      = f.text_field :localtion, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :administrator
+      = f.text_field :administrator, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :user
+      = f.text_field :user, class:'form-control'
+  .form-row
+    .field.col-md-4.form-group
+      = f.label :expiration_date
+      = f.date_field :expiration_date, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :acquisition_date
+      = f.date_field :acquisition_date, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :acquisition_price
+      = f.number_field :acquisition_price, class:'form-control'
+  .form-row
+    .field.col-md-4.form-group
+      = f.label :amortization_period
+      = f.number_field :amortization_period, class:'form-control'
+    .field.col-md-4.form-group
+      = f.label :stete
+      = f.select :stete, options_for_select(Item.stetes_i18n.keys.map {|k| [Item.stetes_i18n[k], k]}), {}, {class:'form-control'}
+    .field.col-md-4.form-group
+      = f.label :remarks
+      = f.text_area :remarks, class:'form-control'
+  .form-row
+    .col.text-center
+      .actions
+        = f.submit class:'btn btn-primary'

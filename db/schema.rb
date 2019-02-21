@@ -10,34 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_100653) do
+ActiveRecord::Schema.define(version: 2019_02_20_075108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "hardwares", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.integer "asset_category", null: false
     t.string "asset_code"
-    t.string "category"
-    t.string "manufacturer"
-    t.string "model", null: false
-    t.string "serial_code"
-    t.string "localtion"
-    t.string "administrator"
-    t.string "user"
-    t.date "acquisition_date"
-    t.integer "acquisition_price"
-    t.integer "amortization_period"
-    t.integer "amortize_state"
-    t.text "remarks"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "softwares", force: :cascade do |t|
-    t.integer "asset_category", null: false
-    t.string "asset_code"
-    t.string "category"
+    t.integer "category"
+    t.string "subcategory"
     t.string "manufacturer"
     t.string "product_name", null: false
     t.string "serial_code"
@@ -48,8 +30,15 @@ ActiveRecord::Schema.define(version: 2019_02_15_100653) do
     t.date "acquisition_date"
     t.integer "acquisition_price"
     t.integer "amortization_period"
-    t.integer "amortize_state"
+    t.integer "state"
     t.text "remarks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "item_id"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

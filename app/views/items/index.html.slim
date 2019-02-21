@@ -41,7 +41,7 @@
         th
           = t('activerecord.attributes.item.amortization_period')
         th
-          = t('activerecord.attributes.item.amortize_state')
+          = t('activerecord.attributes.item.state')
         th
           = t('activerecord.attributes.item.remarks')
         th[colspan="3"]
@@ -49,13 +49,13 @@
       - @items.each do |item|
         tr
           td
-            = link_to 'S-'+"%03d" % item.id.to_s, item
+            = link_to  'KZ-' + (item.category[0].upcase) +'-'+ ("%03d" % item.id.to_s), item
           td
             = item.asset_category_i18n
           td
             = item.asset_code
           td
-            = item.category
+            = item.category_i18n
           td
             = item.subcategory
           td
@@ -79,7 +79,7 @@
           td
             = item.amortization_period
           td
-            = item.amortize_state_i18n
+            = item.state_i18n
           td
             = item.remarks
           td
