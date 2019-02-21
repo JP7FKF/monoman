@@ -53,8 +53,8 @@
       = f.label :amortization_period
       = f.number_field :amortization_period, class:'form-control'
     .field.col-md-4.form-group
-      = f.label :stete
-      = f.select :stete, options_for_select(Item.stetes_i18n.keys.map {|k| [Item.stetes_i18n[k], k]}), {}, {class:'form-control'}
+      = f.label :state
+      = f.select :state, options_for_select(Item.states_i18n.keys.map {|k| [Item.states_i18n[k], k]}), {}, {class:'form-control'}
     .field.col-md-4.form-group
       = f.label :remarks
       = f.text_area :remarks, class:'form-control'

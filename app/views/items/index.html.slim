@@ -48,44 +48,23 @@
     tbody
       - @items.each do |item|
         tr
-          td
-            = link_to  'KZ-' + (item.category[0].upcase) +'-'+ ("%03d" % item.id.to_s), item
-          td
-            = item.asset_category_i18n
-          td
-            = item.asset_code
-          td
-            = item.category_i18n
-          td
-            = item.subcategory
-          td
-            = item.manufacturer
-          td
-            = item.product_name
-          td
-            = item.serial_code
-          td
-            = item.localtion
-          td
-            = item.administrator
-          td
-            = item.user
-          td
-            = item.expiration_date
-          td
-            = item.acquisition_date
-          td
-            = item.acquisition_price
-          td
-            = item.amortization_period
-          td
-            = item.state_i18n
-          td
-            = item.remarks
-          td
-            = link_to 'Show', item
-          td
-            = link_to 'Edit', edit_item_path(item)
-          td
-            = link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
-  br
+          td = link_to  'KZ-' + (item.category[0].upcase) +'-'+ ("%03d" % item.id.to_s), item
+          td = item.asset_category
+          td = item.asset_code
+          td = item.category
+          td = item.subcategory
+          td = item.manufacturer
+          td = item.product_name
+          td = item.serial_code
+          td = item.localtion
+          td = item.administrator
+          td = item.user
+          td = item.expiration_date
+          td = item.acquisition_date
+          td = item.acquisition_price
+          td = item.amortization_period
+          td = item.state
+          td = item.remarks
+          td = link_to 'Show', item
+          td = link_to 'Edit', edit_item_path(item)
+          td = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete

@@ -18,7 +18,6 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Acquisition price", with: @item.acquisition_price
     fill_in "Administrator", with: @item.administrator
     fill_in "Amortization period", with: @item.amortization_period
-    fill_in "Amortize state", with: @item.amortize_state
     fill_in "Asset category", with: @item.asset_category
     fill_in "Asset code", with: @item.asset_code
     fill_in "Category", with: @item.category
@@ -28,6 +27,7 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Product name", with: @item.product_name
     fill_in "Remarks", with: @item.remarks
     fill_in "Serial code", with: @item.serial_code
+    fill_in "State", with: @item.state
     fill_in "Subcategory", with: @item.subcategory
     fill_in "User", with: @item.user
     click_on "Create Item"
@@ -44,7 +44,6 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Acquisition price", with: @item.acquisition_price
     fill_in "Administrator", with: @item.administrator
     fill_in "Amortization period", with: @item.amortization_period
-    fill_in "Amortize state", with: @item.amortize_state
     fill_in "Asset category", with: @item.asset_category
     fill_in "Asset code", with: @item.asset_code
     fill_in "Category", with: @item.category
@@ -54,6 +53,7 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Product name", with: @item.product_name
     fill_in "Remarks", with: @item.remarks
     fill_in "Serial code", with: @item.serial_code
+    fill_in "State", with: @item.state
     fill_in "Subcategory", with: @item.subcategory
     fill_in "User", with: @item.user
     click_on "Update Item"

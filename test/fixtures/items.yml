@@ -11,11 +11,11 @@ one:
   localtion: MyString
   administrator: MyString
   user: MyString
-  expiration_date: 2019-02-20
-  acquisition_date: 2019-02-20
+  expiration_date: 2019-02-22
+  acquisition_date: 2019-02-22
   acquisition_price: 1
   amortization_period: 1
-  amortize_state: 1
+  state: 1
   remarks: MyText
 
 two:
@@ -29,9 +29,9 @@ two:
   localtion: MyString
   administrator: MyString
   user: MyString
-  expiration_date: 2019-02-20
-  acquisition_date: 2019-02-20
+  expiration_date: 2019-02-22
+  acquisition_date: 2019-02-22
   acquisition_price: 1
   amortization_period: 1
-  amortize_state: 1
+  state: 1
   remarks: MyText
