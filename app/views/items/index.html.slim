@@ -49,9 +49,9 @@
       - @items.each do |item|
         tr
           td = link_to  'KZ-' + (item.category[0].upcase) +'-'+ ("%03d" % item.id.to_s), item
-          td = item.asset_category
+          td = item.asset_category_i18n
           td = item.asset_code
-          td = item.category
+          td = item.category_i18n
           td = item.subcategory
           td = item.manufacturer
           td = item.product_name
@@ -63,7 +63,7 @@
           td = item.acquisition_date
           td = item.acquisition_price
           td = item.amortization_period
-          td = item.state
+          td = item.state_i18n
           td = item.remarks
           td = link_to 'Show', item
           td = link_to 'Edit', edit_item_path(item)
