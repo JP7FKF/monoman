@@ -6,8 +6,8 @@
     = link_to 'Items', items_path
   .col-md-4.align-bottom.text-right
     = link_to 'New Item', new_item_path, class:'btn btn-primary'
-.row
-  table.table.table-striped
+.row.table-responsive-sm
+  table.table.table-sm.table-striped.table-bordered.table-hover
     thead.thead-dark
       tr
         th
@@ -29,7 +29,7 @@
         th
           = t('activerecord.attributes.item.localtion')
         th
-          = t('activerecord.attributes.hardware.administrator')
+          = t('activerecord.attributes.item.administrator')
         th
           = t('activerecord.attributes.item.user')
         th
@@ -65,6 +65,6 @@
           td = item.amortization_period
           td = item.state_i18n
           td = item.remarks
-          td = link_to 'Show', item
-          td = link_to 'Edit', edit_item_path(item)
-          td = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete
+          td = link_to 'Show', item, class:'btn btn-primary btn-sm'
+          td = link_to 'Edit', edit_item_path(item), class:'btn btn-warning btn-sm'
+          td = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete, class:'btn btn-danger btn-sm'
